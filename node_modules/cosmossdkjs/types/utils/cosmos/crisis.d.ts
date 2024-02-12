@@ -1,0 +1,1 @@
+export declare function execute_cosmos_crisis_verify_invariant(sender: string, invariantModuleName: string, invariantRoute: string): Promise<import("../../proto/cosmos/crisis/v1beta1/tx").MsgVerifyInvariant>;

@@ -1,0 +1,194 @@
+import * as _m0 from "protobufjs/minimal";
+import { createProtobufRpcClient } from "@cosmjs/stargate";
+import { QueryParamsRequest, QueryParamsResponse, QueryGetLongBookRequest, QueryGetLongBookResponse, QueryAllLongBookRequest, QueryAllLongBookResponse, QueryGetShortBookRequest, QueryGetShortBookResponse, QueryAllShortBookRequest, QueryAllShortBookResponse, QueryGetPriceRequest, QueryGetPriceResponse, QueryGetLatestPriceRequest, QueryGetLatestPriceResponse, QueryGetPricesRequest, QueryGetPricesResponse, QueryGetTwapsRequest, QueryGetTwapsResponse, QueryAssetMetadataRequest, QueryAssetMetadataResponse, QueryAssetListRequest, QueryAssetListResponse, QueryRegisteredPairsRequest, QueryRegisteredPairsResponse, QueryRegisteredContractRequest, QueryRegisteredContractResponse, QueryGetOrdersRequest, QueryGetOrdersResponse, QueryGetOrderByIDRequest, QueryGetOrderByIDResponse, QueryGetHistoricalPricesRequest, QueryGetHistoricalPricesResponse, QueryGetMarketSummaryRequest, QueryGetMarketSummaryResponse, QueryOrderSimulationRequest, QueryOrderSimulationResponse, QueryGetMatchResultRequest, QueryGetMatchResultResponse, QueryGetOrderCountRequest, QueryGetOrderCountResponse } from "./query";
+export class QueryClientImpl {
+    constructor(rpc) {
+        this.rpc = rpc;
+        this.params = this.params.bind(this);
+        this.longBook = this.longBook.bind(this);
+        this.longBookAll = this.longBookAll.bind(this);
+        this.shortBook = this.shortBook.bind(this);
+        this.shortBookAll = this.shortBookAll.bind(this);
+        this.getPrice = this.getPrice.bind(this);
+        this.getLatestPrice = this.getLatestPrice.bind(this);
+        this.getPrices = this.getPrices.bind(this);
+        this.getTwaps = this.getTwaps.bind(this);
+        this.assetMetadata = this.assetMetadata.bind(this);
+        this.assetList = this.assetList.bind(this);
+        this.getRegisteredPairs = this.getRegisteredPairs.bind(this);
+        this.getRegisteredContract = this.getRegisteredContract.bind(this);
+        this.getOrders = this.getOrders.bind(this);
+        this.getOrder = this.getOrder.bind(this);
+        this.getHistoricalPrices = this.getHistoricalPrices.bind(this);
+        this.getMarketSummary = this.getMarketSummary.bind(this);
+        this.getOrderSimulation = this.getOrderSimulation.bind(this);
+        this.getMatchResult = this.getMatchResult.bind(this);
+        this.getOrderCount = this.getOrderCount.bind(this);
+    }
+    params(request = {}) {
+        const data = QueryParamsRequest.encode(request).finish();
+        const promise = this.rpc.request("seiprotocol.seichain.dex.Query", "Params", data);
+        return promise.then(data => QueryParamsResponse.decode(new _m0.Reader(data)));
+    }
+    longBook(request) {
+        const data = QueryGetLongBookRequest.encode(request).finish();
+        const promise = this.rpc.request("seiprotocol.seichain.dex.Query", "LongBook", data);
+        return promise.then(data => QueryGetLongBookResponse.decode(new _m0.Reader(data)));
+    }
+    longBookAll(request) {
+        const data = QueryAllLongBookRequest.encode(request).finish();
+        const promise = this.rpc.request("seiprotocol.seichain.dex.Query", "LongBookAll", data);
+        return promise.then(data => QueryAllLongBookResponse.decode(new _m0.Reader(data)));
+    }
+    shortBook(request) {
+        const data = QueryGetShortBookRequest.encode(request).finish();
+        const promise = this.rpc.request("seiprotocol.seichain.dex.Query", "ShortBook", data);
+        return promise.then(data => QueryGetShortBookResponse.decode(new _m0.Reader(data)));
+    }
+    shortBookAll(request) {
+        const data = QueryAllShortBookRequest.encode(request).finish();
+        const promise = this.rpc.request("seiprotocol.seichain.dex.Query", "ShortBookAll", data);
+        return promise.then(data => QueryAllShortBookResponse.decode(new _m0.Reader(data)));
+    }
+    getPrice(request) {
+        const data = QueryGetPriceRequest.encode(request).finish();
+        const promise = this.rpc.request("seiprotocol.seichain.dex.Query", "GetPrice", data);
+        return promise.then(data => QueryGetPriceResponse.decode(new _m0.Reader(data)));
+    }
+    getLatestPrice(request) {
+        const data = QueryGetLatestPriceRequest.encode(request).finish();
+        const promise = this.rpc.request("seiprotocol.seichain.dex.Query", "GetLatestPrice", data);
+        return promise.then(data => QueryGetLatestPriceResponse.decode(new _m0.Reader(data)));
+    }
+    getPrices(request) {
+        const data = QueryGetPricesRequest.encode(request).finish();
+        const promise = this.rpc.request("seiprotocol.seichain.dex.Query", "GetPrices", data);
+        return promise.then(data => QueryGetPricesResponse.decode(new _m0.Reader(data)));
+    }
+    getTwaps(request) {
+        const data = QueryGetTwapsRequest.encode(request).finish();
+        const promise = this.rpc.request("seiprotocol.seichain.dex.Query", "GetTwaps", data);
+        return promise.then(data => QueryGetTwapsResponse.decode(new _m0.Reader(data)));
+    }
+    assetMetadata(request) {
+        const data = QueryAssetMetadataRequest.encode(request).finish();
+        const promise = this.rpc.request("seiprotocol.seichain.dex.Query", "AssetMetadata", data);
+        return promise.then(data => QueryAssetMetadataResponse.decode(new _m0.Reader(data)));
+    }
+    assetList(request = {}) {
+        const data = QueryAssetListRequest.encode(request).finish();
+        const promise = this.rpc.request("seiprotocol.seichain.dex.Query", "AssetList", data);
+        return promise.then(data => QueryAssetListResponse.decode(new _m0.Reader(data)));
+    }
+    getRegisteredPairs(request) {
+        const data = QueryRegisteredPairsRequest.encode(request).finish();
+        const promise = this.rpc.request("seiprotocol.seichain.dex.Query", "GetRegisteredPairs", data);
+        return promise.then(data => QueryRegisteredPairsResponse.decode(new _m0.Reader(data)));
+    }
+    getRegisteredContract(request) {
+        const data = QueryRegisteredContractRequest.encode(request).finish();
+        const promise = this.rpc.request("seiprotocol.seichain.dex.Query", "GetRegisteredContract", data);
+        return promise.then(data => QueryRegisteredContractResponse.decode(new _m0.Reader(data)));
+    }
+    getOrders(request) {
+        const data = QueryGetOrdersRequest.encode(request).finish();
+        const promise = this.rpc.request("seiprotocol.seichain.dex.Query", "GetOrders", data);
+        return promise.then(data => QueryGetOrdersResponse.decode(new _m0.Reader(data)));
+    }
+    getOrder(request) {
+        const data = QueryGetOrderByIDRequest.encode(request).finish();
+        const promise = this.rpc.request("seiprotocol.seichain.dex.Query", "GetOrder", data);
+        return promise.then(data => QueryGetOrderByIDResponse.decode(new _m0.Reader(data)));
+    }
+    getHistoricalPrices(request) {
+        const data = QueryGetHistoricalPricesRequest.encode(request).finish();
+        const promise = this.rpc.request("seiprotocol.seichain.dex.Query", "GetHistoricalPrices", data);
+        return promise.then(data => QueryGetHistoricalPricesResponse.decode(new _m0.Reader(data)));
+    }
+    getMarketSummary(request) {
+        const data = QueryGetMarketSummaryRequest.encode(request).finish();
+        const promise = this.rpc.request("seiprotocol.seichain.dex.Query", "GetMarketSummary", data);
+        return promise.then(data => QueryGetMarketSummaryResponse.decode(new _m0.Reader(data)));
+    }
+    getOrderSimulation(request) {
+        const data = QueryOrderSimulationRequest.encode(request).finish();
+        const promise = this.rpc.request("seiprotocol.seichain.dex.Query", "GetOrderSimulation", data);
+        return promise.then(data => QueryOrderSimulationResponse.decode(new _m0.Reader(data)));
+    }
+    getMatchResult(request) {
+        const data = QueryGetMatchResultRequest.encode(request).finish();
+        const promise = this.rpc.request("seiprotocol.seichain.dex.Query", "GetMatchResult", data);
+        return promise.then(data => QueryGetMatchResultResponse.decode(new _m0.Reader(data)));
+    }
+    getOrderCount(request) {
+        const data = QueryGetOrderCountRequest.encode(request).finish();
+        const promise = this.rpc.request("seiprotocol.seichain.dex.Query", "GetOrderCount", data);
+        return promise.then(data => QueryGetOrderCountResponse.decode(new _m0.Reader(data)));
+    }
+}
+export const createRpcQueryExtension = (base) => {
+    const rpc = createProtobufRpcClient(base);
+    const queryService = new QueryClientImpl(rpc);
+    return {
+        params(request) {
+            return queryService.params(request);
+        },
+        longBook(request) {
+            return queryService.longBook(request);
+        },
+        longBookAll(request) {
+            return queryService.longBookAll(request);
+        },
+        shortBook(request) {
+            return queryService.shortBook(request);
+        },
+        shortBookAll(request) {
+            return queryService.shortBookAll(request);
+        },
+        getPrice(request) {
+            return queryService.getPrice(request);
+        },
+        getLatestPrice(request) {
+            return queryService.getLatestPrice(request);
+        },
+        getPrices(request) {
+            return queryService.getPrices(request);
+        },
+        getTwaps(request) {
+            return queryService.getTwaps(request);
+        },
+        assetMetadata(request) {
+            return queryService.assetMetadata(request);
+        },
+        assetList(request) {
+            return queryService.assetList(request);
+        },
+        getRegisteredPairs(request) {
+            return queryService.getRegisteredPairs(request);
+        },
+        getRegisteredContract(request) {
+            return queryService.getRegisteredContract(request);
+        },
+        getOrders(request) {
+            return queryService.getOrders(request);
+        },
+        getOrder(request) {
+            return queryService.getOrder(request);
+        },
+        getHistoricalPrices(request) {
+            return queryService.getHistoricalPrices(request);
+        },
+        getMarketSummary(request) {
+            return queryService.getMarketSummary(request);
+        },
+        getOrderSimulation(request) {
+            return queryService.getOrderSimulation(request);
+        },
+        getMatchResult(request) {
+            return queryService.getMatchResult(request);
+        },
+        getOrderCount(request) {
+            return queryService.getOrderCount(request);
+        }
+    };
+};

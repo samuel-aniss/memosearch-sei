@@ -1,0 +1,27 @@
+/// <reference types="long" />
+import { Channel, Packet } from "../../../../types/proto/ibc/core/channel/v1/channel";
+import { Height } from "../../../../types/proto/ibc/core/client/v1/client";
+import { CosmosChainClient } from "../../../clients";
+export declare function query_ibc_core_channel_channel(client: CosmosChainClient, portId: string, channelId: string): Promise<any>;
+export declare function query_ibc_core_channel_channels(client: CosmosChainClient, offset?: number, limit?: number): Promise<any>;
+export declare function query_ibc_core_channel_connectionChannels(client: CosmosChainClient, connection: string, offset?: number, limit?: number): Promise<any>;
+export declare function query_ibc_core_channel_channelClientState(client: CosmosChainClient, portId: string, channelId: string): Promise<any>;
+export declare function query_ibc_core_channel_channelConsensusState(client: CosmosChainClient, portId: string, channelId: string, revisionNumber: Long, revisionHeight: Long): Promise<any>;
+export declare function query_ibc_core_channel_packetCommitment(client: CosmosChainClient, portId: string, channelId: string, sequence: Long): Promise<any>;
+export declare function query_ibc_core_channel_packetCommitments(client: CosmosChainClient, portId: string, channelId: string, offset?: number, limit?: number): Promise<any>;
+export declare function query_ibc_core_channel_packetReceipt(client: CosmosChainClient, portId: string, channelId: string, sequence: Long): Promise<any>;
+export declare function query_ibc_core_channel_packetAcknowledgement(client: CosmosChainClient, portId: string, channelId: string, sequence: Long): Promise<any>;
+export declare function query_ibc_core_channel_packetAcknowledgements(client: CosmosChainClient, portId: string, channelId: string, packetCommitmentSequences: Long[], offset?: number, limit?: number): Promise<any>;
+export declare function query_ibc_core_channel_unreceivedPackets(client: CosmosChainClient, portId: string, channelId: string, packetCommitmentSequences: Long[]): Promise<any>;
+export declare function query_ibc_core_channel_unreceivedAcks(client: CosmosChainClient, portId: string, channelId: string, packetAckSequences: Long[]): Promise<any>;
+export declare function query_ibc_core_channel_nextSequenceReceive(client: CosmosChainClient, portId: string, channelId: string): Promise<any>;
+export declare function execute_ibc_core_channel_channelOpenInit(portId: string, channel: Channel, signer: string): Promise<import("../../../proto/ibc/core/channel/v1/tx").MsgChannelOpenInit>;
+export declare function execute_ibc_core_channel_channelOpenTry(portId: string, previousChannelId: string, channel: Channel, counterpartyVersion: string, proofInit: Uint8Array, proofHeight: Height, signer: string): Promise<import("../../../proto/ibc/core/channel/v1/tx").MsgChannelOpenTry>;
+export declare function execute_ibc_core_channel_channelOpenAck(portId: string, channelId: string, counterpartyChannelId: string, counterpartyVersion: string, proofTry: Uint8Array, proofHeight: Height, signer: string): Promise<import("../../../proto/ibc/core/channel/v1/tx").MsgChannelOpenAck>;
+export declare function execute_ibc_core_channel_channelOpenConfirm(portId: string, channelId: string, proofAck: Uint8Array, proofHeight: Height, signer: string): Promise<import("../../../proto/ibc/core/channel/v1/tx").MsgChannelOpenConfirm>;
+export declare function execute_ibc_core_channel_channelCloseInit(portId: string, channelId: string, signer: string): Promise<import("../../../proto/ibc/core/channel/v1/tx").MsgChannelCloseInit>;
+export declare function execute_ibc_core_channel_channelCloseConfirm(portId: string, channelId: string, proofInit: Uint8Array, proofHeight: Height, signer: string): Promise<import("../../../proto/ibc/core/channel/v1/tx").MsgChannelCloseConfirm>;
+export declare function execute_ibc_core_channel_recvPacket(packet: Packet, proofCommitment: Uint8Array, proofHeight: Height, signer: string): Promise<import("../../../proto/ibc/core/channel/v1/tx").MsgRecvPacket>;
+export declare function execute_ibc_core_channel_timeout(packet: Packet, proofUnreceived: Uint8Array, proofHeight: Height, nextSequenceRecv: Long, signer: string): Promise<import("../../../proto/ibc/core/channel/v1/tx").MsgTimeout>;
+export declare function execute_ibc_core_channel_timeoutOnClose(packet: Packet, proofUnreceived: Uint8Array, proofClose: Uint8Array, proofHeight: Height, nextSequenceRecv: Long, signer: string): Promise<import("../../../proto/ibc/core/channel/v1/tx").MsgTimeoutOnClose>;
+export declare function execute_ibc_core_channel_acknowledgement(packet: Packet, acknowledgement: Uint8Array, proofAcked: Uint8Array, proofHeight: Height, signer: string): Promise<import("../../../proto/ibc/core/channel/v1/tx").MsgAcknowledgement>;

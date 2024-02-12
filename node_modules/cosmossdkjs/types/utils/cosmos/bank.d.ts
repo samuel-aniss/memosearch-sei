@@ -1,0 +1,12 @@
+import { Coin } from "../../../types/proto/cosmos/base/v1beta1/coin";
+import { Input, Output } from "../../../types/proto/cosmos/bank/v1beta1/bank";
+import { CosmosChainClient } from "../../clients";
+export declare function query_cosmos_bank_balance(client: CosmosChainClient, address: string, denom: string): Promise<any>;
+export declare function query_cosmos_bank_all_balances(client: CosmosChainClient, address: string, offset?: number, limit?: number): Promise<any>;
+export declare function query_cosmos_bank_total_supply(client: CosmosChainClient, offset?: number, limit?: number): Promise<any>;
+export declare function query_cosmos_bank_supply_of(client: CosmosChainClient, denom: string): Promise<any>;
+export declare function query_cosmos_bank_params(client: CosmosChainClient): Promise<any>;
+export declare function query_cosmos_bank_denom_metadata(client: CosmosChainClient, denom: string): Promise<any>;
+export declare function query_cosmos_bank_denoms_metadata(client: CosmosChainClient, offset?: number, limit?: number): Promise<any>;
+export declare function execute_cosmos_bank_send(fromAddress: string, toAddress: string, amount: Coin[]): Promise<import("../../proto/cosmos/bank/v1beta1/tx").MsgSend>;
+export declare function execute_cosmos_bank_multi_send(inputs: Input[], outputs: Output[]): Promise<import("../../proto/cosmos/bank/v1beta1/tx").MsgMultiSend>;

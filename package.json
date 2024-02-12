@@ -1,0 +1,54 @@
+{
+  "name": "@we-bump/lighthouse-cli",
+  "version": "0.3.7",
+  "description": "A CLI tool to create NFT collections on SEI and upload metadata to Arweave",
+  "main": "dist/lighthouse.js",
+  "bin": {
+    "lighthouse": "dist/lighthouse.js"
+  },
+  "scripts": {
+    "start": "ts-node lighthouse.ts",
+    "build": "npx tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@cosmjs/cosmwasm-stargate": "^0.30.1",
+    "@cosmjs/crypto": "^0.32.2",
+    "@cosmjs/proto-signing": "^0.30.1",
+    "@cosmjs/stargate": "^0.32.2",
+    "@cosmos-client/core": "^0.47.4",
+    "@noble/hashes": "^1.3.0",
+    "@sei-js/core": "^3.1.3",
+    "@supercharge/promise-pool": "^2.4.0",
+    "arweave": "^1.13.7",
+    "arweave-stream-tx": "^1.2.2",
+    "bignumber.js": "^9.1.2",
+    "bip39": "^3.1.0",
+    "chain-registry": "^1.25.4",
+    "chalk": "^4.1.2",
+    "commander": "^10.0.1",
+    "cosmjs-utils": "^0.1.0",
+    "cosmos-client": "^0.42.14",
+    "cosmossdkjs": "^0.0.7",
+    "fast-glob": "^3.2.12",
+    "fs": "^0.0.1-security",
+    "inquirer": "^8.0.0",
+    "keccak": "^3.0.4",
+    "merkletreejs": "^0.3.10",
+    "mime": "^3.0.0",
+    "node-fetch": "^3.3.2",
+    "ora": "^5.0.0",
+    "prompt-sync": "^4.2.0",
+    "readline-sync": "^1.4.10",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^8.0.0",
+    "@types/mime": "^3.0.1",
+    "@types/node": "^20.2.3",
+    "@types/yargs": "^17.0.32",
+    "typescript": "^5.0.4"
+  }
+}

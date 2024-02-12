@@ -1,0 +1,32 @@
+import * as _m0 from "protobufjs/minimal";
+import { createProtobufRpcClient } from "@cosmjs/stargate";
+import { QueryParamsRequest, QueryParamsResponse, QueryMinterRequest, QueryMinterResponse } from "./query";
+export class QueryClientImpl {
+    constructor(rpc) {
+        this.rpc = rpc;
+        this.params = this.params.bind(this);
+        this.minter = this.minter.bind(this);
+    }
+    params(request = {}) {
+        const data = QueryParamsRequest.encode(request).finish();
+        const promise = this.rpc.request("seiprotocol.seichain.mint.Query", "Params", data);
+        return promise.then(data => QueryParamsResponse.decode(new _m0.Reader(data)));
+    }
+    minter(request = {}) {
+        const data = QueryMinterRequest.encode(request).finish();
+        const promise = this.rpc.request("seiprotocol.seichain.mint.Query", "Minter", data);
+        return promise.then(data => QueryMinterResponse.decode(new _m0.Reader(data)));
+    }
+}
+export const createRpcQueryExtension = (base) => {
+    const rpc = createProtobufRpcClient(base);
+    const queryService = new QueryClientImpl(rpc);
+    return {
+        params(request) {
+            return queryService.params(request);
+        },
+        minter(request) {
+            return queryService.minter(request);
+        }
+    };
+};

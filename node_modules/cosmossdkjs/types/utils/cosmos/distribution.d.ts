@@ -1,0 +1,15 @@
+import { Coin } from "../../../types/proto/cosmos/base/v1beta1/coin";
+import { CosmosChainClient } from "../../clients";
+export declare function query_cosmos_distribution_params(client: CosmosChainClient): Promise<any>;
+export declare function query_cosmos_distribution_validator_outstanding_rewards(client: CosmosChainClient, validatorAddress: string): Promise<any>;
+export declare function query_cosmos_distribution_validator_commission(client: CosmosChainClient, validatorAddress: string): Promise<any>;
+export declare function query_cosmos_distribution_validator_slashes(client: CosmosChainClient, validatorAddress: string, startingHeight: number, endingHeight: number, offset?: number, limit?: number): Promise<any>;
+export declare function query_cosmos_distribution_delegationRewards(client: CosmosChainClient, delegatorAddress: string, validatorAddress: string): Promise<any>;
+export declare function query_cosmos_distribution_delegation_total_rewards(client: CosmosChainClient, delegatorAddress: string): Promise<any>;
+export declare function query_cosmos_distribution_delegator_validators(client: CosmosChainClient, delegatorAddress: string): Promise<any>;
+export declare function query_cosmos_distribution_delegator_withdraw_address(client: CosmosChainClient, delegatorAddress: string): Promise<any>;
+export declare function query_cosmos_distribution_community_pool(client: CosmosChainClient): Promise<any>;
+export declare function execute_cosmos_distribution_set_withdraw_address(delegatorAddress: string, withdrawAddress: string): Promise<import("../../proto/cosmos/distribution/v1beta1/tx").MsgSetWithdrawAddress>;
+export declare function execute_cosmos_distribution_withdraw_delegator_reward(delegatorAddress: string, validatorAddress: string): Promise<import("../../proto/cosmos/distribution/v1beta1/tx").MsgWithdrawDelegatorReward>;
+export declare function execute_cosmos_distribution_withdraw_validator_commission(validatorAddress: string): Promise<import("../../proto/cosmos/distribution/v1beta1/tx").MsgWithdrawValidatorCommission>;
+export declare function execute_cosmos_distribution_fund_community_pool(amount: Coin[], depositor: string): Promise<import("../../proto/cosmos/distribution/v1beta1/tx").MsgFundCommunityPool>;

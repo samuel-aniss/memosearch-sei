@@ -1,0 +1,16 @@
+import { Coin } from "../../../types/proto/cosmos/base/v1beta1/coin";
+import { ProposalStatus, VoteOption, WeightedVoteOption } from "../../../types/proto/cosmos/gov/v1beta1/gov";
+import { Any } from "../../../types/proto/google/protobuf/any";
+import { CosmosChainClient } from "../../clients";
+export declare function query_cosmos_gov_proposal(client: CosmosChainClient, proposalId: number): Promise<any>;
+export declare function query_cosmos_gov_proposals(client: CosmosChainClient, proposalStatus: ProposalStatus, voter: string, depositor: string, offset?: number, limit?: number): Promise<any>;
+export declare function query_cosmos_gov_vote(client: CosmosChainClient, proposalId: number, voter: string): Promise<any>;
+export declare function query_cosmos_gov_votes(client: CosmosChainClient, proposalId: number, offset?: number, limit?: number): Promise<any>;
+export declare function query_cosmos_gov_params(client: CosmosChainClient): Promise<any>;
+export declare function query_cosmos_gov_deposit(client: CosmosChainClient, proposalId: number, depositor: string): Promise<any>;
+export declare function query_cosmos_gov_deposits(client: CosmosChainClient, proposalId: number, offset?: number, limit?: number): Promise<any>;
+export declare function query_cosmos_gov_tally_result(client: CosmosChainClient, proposalId: number): Promise<any>;
+export declare function execute_cosmos_gov_submit_proposal_msg(content: Any, initialDeposit: Coin[], proposer: string): Promise<import("../../proto/cosmos/gov/v1beta1/tx").MsgSubmitProposal>;
+export declare function execute_cosmos_gov_vote_msg(proposalId: number, voter: string, option: VoteOption): Promise<import("../../proto/cosmos/gov/v1beta1/tx").MsgVote>;
+export declare function execute_cosmos_gov_vote_weighted_msg(proposalId: number, voter: string, options: WeightedVoteOption[]): Promise<import("../../proto/cosmos/gov/v1beta1/tx").MsgVoteWeighted>;
+export declare function execute_cosmos_gov_deposit_msg(proposalId: number, depositor: string, amount: Coin[]): Promise<import("../../proto/cosmos/gov/v1beta1/tx").MsgDeposit>;

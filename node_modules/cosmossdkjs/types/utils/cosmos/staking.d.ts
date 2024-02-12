@@ -1,0 +1,24 @@
+/// <reference types="long" />
+import { Coin } from "../../../types/proto/cosmos/base/v1beta1/coin";
+import { CommissionRates, Description } from "../../../types/proto/cosmos/staking/v1beta1/staking";
+import { Any } from "../../../types/proto/google/protobuf/any";
+import { CosmosChainClient } from "../../clients";
+export declare function query_cosmos_staking_validators(client: CosmosChainClient, status: string, offset?: number, limit?: number): Promise<any>;
+export declare function query_cosmos_staking_validator(client: CosmosChainClient, validatorAddr: string): Promise<any>;
+export declare function query_cosmos_staking_validator_delegations(client: CosmosChainClient, validatorAddr: string, offset?: number, limit?: number): Promise<any>;
+export declare function query_cosmos_staking_validator_unbonding_delegations(client: CosmosChainClient, validatorAddr: string, offset?: number, limit?: number): Promise<any>;
+export declare function query_cosmos_staking_delegation(client: CosmosChainClient, delegatorAddr: string, validatorAddr: string): Promise<any>;
+export declare function query_cosmos_staking_unbonding_delegation(client: CosmosChainClient, delegatorAddr: string, validatorAddr: string): Promise<any>;
+export declare function query_cosmos_staking_delegator_delegations(client: CosmosChainClient, delegatorAddr: string, offset?: number, limit?: number): Promise<any>;
+export declare function query_cosmos_staking_delegator_unbonding_delegations(client: CosmosChainClient, delegatorAddr: string, offset?: number, limit?: number): Promise<any>;
+export declare function query_cosmos_staking_redelegations(client: CosmosChainClient, delegatorAddr: string, srcValidatorAddr: string, dstValidatorAddr: string, offset?: number, limit?: number): Promise<any>;
+export declare function query_cosmos_staking_delegator_validators(client: CosmosChainClient, delegatorAddr: string, offset?: number, limit?: number): Promise<any>;
+export declare function query_cosmos_staking_delegator_validator(client: CosmosChainClient, delegatorAddr: string, validatorAddr: string): Promise<any>;
+export declare function query_cosmos_staking_historical_info(client: CosmosChainClient, height: Long): Promise<any>;
+export declare function query_cosmos_staking_pool(client: CosmosChainClient, poolId: Long): Promise<any>;
+export declare function query_cosmos_staking_params(client: CosmosChainClient): Promise<any>;
+export declare function execute_cosmos_staking_create_validator(description: Description, commission: CommissionRates, minSelfDelegation: string, delegatorAddress: string, validatorAddress: string, pubkey: Any, value: Coin): Promise<import("../../proto/cosmos/staking/v1beta1/tx").MsgCreateValidator>;
+export declare function execute_cosmos_staking_edit_validator(description: Description, validatorAddress: string): Promise<import("../../proto/cosmos/staking/v1beta1/tx").MsgEditValidator>;
+export declare function execute_cosmos_staking_delegate(delegatorAddress: string, validatorAddress: string, amount: Coin): Promise<import("../../proto/cosmos/staking/v1beta1/tx").MsgDelegate>;
+export declare function execute_cosmos_staking_begin_redelegate(delegatorAddress: string, validatorSrcAddress: string, validatorDstAddress: string, amount: Coin): Promise<import("../../proto/cosmos/staking/v1beta1/tx").MsgBeginRedelegate>;
+export declare function execute_cosmos_staking_undelegate(delegatorAddress: string, validatorAddress: string, amount: Coin): Promise<import("../../proto/cosmos/staking/v1beta1/tx").MsgUndelegate>;
